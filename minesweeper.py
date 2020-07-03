@@ -59,14 +59,12 @@ def convert_val_to_discord(x, boom_string):
     return y
 
 
-def discord_minesweeper(x, y):
+def discord_minesweeper(x, y, boom_string):
     grid = place_mines(x, y)
     grid = count_mines(grid)
     for row in grid:
-        print("\t".join(convert_val_to_discord(cell, "rainbow_heart") for cell in row))
+        print("\t".join(convert_val_to_discord(cell, boom_string) for cell in row))
 
 
 if __name__ == "__main__":
-    # beginner
-    discord_minesweeper(6, 12)  # intermediate
-    # minesweeper(8, 20)  # advanced
+    discord_minesweeper(6, 12, "rainbow_heart")  # intermediate
